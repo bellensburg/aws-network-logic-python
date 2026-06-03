@@ -1,56 +1,59 @@
-# aws-network-logic-python
+# AWS Network Logic Simulator (Python)
 
-AWS Network Logic (Python)
-This repository contains small Python utilities that simulate AWS‑style network reasoning.
+This project simulates AWS networking logic using Python, focusing on **reachability, routing decisions, and Transit Gateway behavior**.
 
-The goal is to demonstrate the ability to:
+It is designed to mimic **real-world cloud networking challenges** such as:
+- Determining if two subnets can communicate
+- Evaluating route table decisions
+- Understanding Transit Gateway attachment and routing logic
+- Troubleshooting network connectivity in distributed cloud environments
 
-- parse AWS‑like JSON
+---
 
-- find objects by ID
+## 🚀 Why this project matters
 
-- evaluate routing logic
+In large-scale cloud environments, network engineers must:
 
-- simulate Transit Gateway reachability
+- Debug connectivity issues quickly
+- Understand complex routing flows
+- Automate validation of network paths
+- Reduce manual troubleshooting
 
-- write clean, testable Python functions
+This repository demonstrates how those problems can be **modeled and solved programmatically**.
 
+---
 
-These patterns match real AWS networking tasks such as:
+## 🧠 Key Features
 
-- checking if two subnets can communicate
+### ✅ Reachability Engine
+Simulates whether traffic can flow between subnets based on:
+- Route tables
+- CIDR matching
+- Target resources (IGW, NAT, TGW)
 
-- determining TGW attachment relationships
+### ✅ Transit Gateway Logic
+Evaluates:
+- TGW attachments
+- Cross-VPC routing
+- Inter-VPC connectivity paths
 
-- evaluating route table entries
+### ✅ Object Search Utilities
+Efficient lookup of AWS-like resources using IDs
 
-- validating network paths
+---
 
+## 🏗️ Architecture Concept
 
+The project models:
 
-Contents
-data/sample_topology.json — Example AWS‑style topology
+- VPCs
+- Subnets
+- Route Tables
+- Transit Gateways
+- Attachments
 
-- src/find_by_id.py — Utility to find objects in lists
+This allows simulation of **multi-VPC communication patterns**, similar to production cloud architectures.
 
-- src/reachability.py — Logic to determine subnet‑to‑subnet reachability
+---
 
-- src/tgw_logic.py — Transit Gateway attachment evaluation
-
-
-
-Skills Demonstrated
-- Python (loops, conditions, dicts, lists)
-
-- JSON parsing
-
-- AWS networking concepts (VPC, Subnets, TGW, Route Tables)
-
-- Network automation mindset
-
-- Clean code structure
-
-
-
-How to run:
-- python3 src/reachability.py
+## 📂 Project Structure
